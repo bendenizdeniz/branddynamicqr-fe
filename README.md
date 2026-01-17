@@ -1,73 +1,117 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# Brand QR Management System - Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, high-performance Admin Dashboard built with **React**, **Vite**, and **Tailwind CSS v4**. This application serves as the centralized management interface for QR-based menu systems, allowing companies and brands to manage their products, branches, and user permissions efficiently.
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Framework:** [React 18](https://reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) (using the new `@tailwindcss/postcss` engine)
+* **Routing:** [React Router 6](https://reactrouter.com/)
+* **Icons:** [Lucide React](https://lucide.dev/)
+* **HTTP Client:** [Axios](https://axios-http.com/) with Interceptors for JWT management.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Key Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🔐 Authentication & Security
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **JWT Based Auth:** Secure login flow with token-based session management.
+* **Protected Routes:** Higher-Order Component (HOC) logic to prevent unauthorized access to management pages.
+* **Role-Based Access (RBAC):** Dynamic navigation and content visibility based on user roles (`ADMIN`, `BRAND`, etc.).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📂 Management Modules
+
+* **Company & Brand Management:** Global control for multi-tenant structures.
+* **Branch (Subvendor) Management:** Manage individual locations and their specific settings.
+* **Product & Category Engine:** Localized product listing and management with real-time price synchronization.
+* **User & Permission System:** Advanced role management and user assignment.
+
+### 🎨 UI/UX Design
+
+* **Responsive Layout:** A persistent sidebar navigation with a fluid content area.
+* **Modern Aesthetics:** Clean, minimalist design using Tailwind's latest color palettes and spacing utilities.
+* **Stateful Feedback:** Loading states, error handling with toast-style notifications, and empty state illustrations.
+
+---
+
+## 🛠️ Project Structure
+
+```text
+frontend/
+├── src/
+│   ├── api/            # Axios instance and interceptors
+│   ├── components/     # Reusable UI components (Layout, ProtectedRoute, etc.)
+│   ├── pages/          # Full-page components (Login, Dashboard, Products)
+│   ├── assets/         # Static images and global styles
+│   ├── App.tsx         # Root component with routing logic
+│   └── main.tsx        # Entry point
+├── postcss.config.js   # Tailwind v4 PostCSS configuration
+├── tsconfig.json       # TypeScript configuration
+└── package.json        # Dependencies and scripts
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚦 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+* Node.js (v18 or higher)
+* npm or yarn
+
+### Installation
+
+1. Clone the repository and navigate to the frontend folder:
+```bash
+cd frontend
+
 ```
+
+
+2. Install dependencies:
+```bash
+npm install
+
+```
+
+
+
+### Development
+
+Start the development server:
+
+```bash
+npm run dev
+
+```
+
+### Production Build
+
+Generate a production-ready bundle:
+
+```bash
+npm run build
+
+```
+
+---
+
+## 📡 API Integration
+
+The frontend communicates with a RESTful backend. Global settings for the API can be found in `src/api/axios.ts`.
+
+**Security Note:** All requests to protected endpoints automatically include the `Authorization: Bearer <token>` header via Axios interceptors.
+
+---
+
+## 📝 License
+
+This project is private and confidential. Unauthorized copying or distribution is strictly prohibited.
+
+---
