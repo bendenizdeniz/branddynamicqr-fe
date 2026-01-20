@@ -6,6 +6,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 import CategoryManagement from './pages/CategoryManagement';
 import SubvendorManagement from './pages/SubvendorManagement';
+import BrandManagement from './pages/BrandManagement';
+import OwnerManagement from './pages/OwnerManagement';
 
 function App() {
   return (
@@ -68,6 +70,28 @@ function App() {
             <ProtectedRoute>
               <Layout>
                 <SubvendorManagement />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+         <Route
+          path="/brand-management"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <BrandManagement />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+         <Route
+          path="/owner-management"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <OwnerManagement />
               </Layout>
             </ProtectedRoute>
           }
