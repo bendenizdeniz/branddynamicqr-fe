@@ -1,9 +1,11 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Layout from './components/Layout';
-import MyProducts from './pages/ProductManagement';
-import ProtectedRoute from './components/ProtectedRoute'; // <-- Import buraya eklendi
+import ProductManagement from './pages/ProductManagement';
+import ProtectedRoute from './components/ProtectedRoute'; 
+import Dashboard from './pages/Dashboard';
+import CategoryManagement from './pages/CategoryManagement';
+import SubvendorManagement from './pages/SubvendorManagement';
 
 function App() {
   return (
@@ -28,16 +30,48 @@ function App() {
         />
 
         <Route
-          path="/product-management "
+          path="/product-management"
           element={
             <ProtectedRoute>
               <Layout>
-                <MyProducts />
+                <ProductManagement />
               </Layout>
             </ProtectedRoute>
           }
         />
 
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Dashboard />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+         <Route
+          path="/category-management"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <CategoryManagement />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+         <Route
+          path="/subvendor-management"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <SubvendorManagement />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
         {/* Tanımlanmayan yollar için yönlendirme */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

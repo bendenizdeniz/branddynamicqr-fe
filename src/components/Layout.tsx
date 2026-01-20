@@ -41,8 +41,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Yönetim</p>
   </div>
           <Link 
-            to="/" 
-            className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${location.pathname === '/' ? 'bg-blue-600' : 'hover:bg-slate-800 text-slate-400 hover:text-white'}`}
+            to="/dashboard" 
+            className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${location.pathname === '/dashboard' ? 'bg-blue-600' : 'hover:bg-slate-800 text-slate-400 hover:text-white'}`}
           >
             <LayoutDashboard size={20} />
             <span>Dashboard</span>
