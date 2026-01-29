@@ -118,3 +118,17 @@ export interface Brand {
     identities: number;
   };
 }
+
+export interface Identity {
+    id: number;
+    email: string;
+    role: 'ADMIN' | 'OWNER' | 'BRAND' | 'SUBVENDOR';
+    is_active: boolean;
+    ownerId?: number | null;
+    brandId?: number | null;
+    subvendorId?: number | null;
+    owner?: { name: string };
+    brand?: { name: string };
+    subvendor?: { name: string };
+    created_at: string;
+}

@@ -194,7 +194,7 @@ const BrandManagement: React.FC = () => {
                 <input disabled={modalMode === 'view'} className="w-full p-3 bg-gray-50 border border-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-500/20 disabled:opacity-70" value={selectedBrand.phone || ''} onChange={(e) => setSelectedBrand({...selectedBrand, phone: e.target.value})} />
               </div>
               <div className="col-span-2 space-y-1.5">
-                <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Resmi Ticari Ünvan</label>
+                <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Yönetici</label>
                 <input disabled={modalMode === 'view'} className="w-full p-3 bg-gray-50 border border-gray-200 rounded-2xl outline-none disabled:opacity-70" value={selectedBrand.official_name || ''} placeholder="Holding A.Ş." onChange={(e) => setSelectedBrand({...selectedBrand, official_name: e.target.value})} />
               </div>
               <div className="space-y-1.5">

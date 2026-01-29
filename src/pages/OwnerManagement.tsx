@@ -156,7 +156,7 @@ const OwnerManagement: React.FC = () => {
                 <input required disabled={modalMode === 'view'} className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl font-mono" value={selectedOwner.vkn || ''} onChange={e => setSelectedOwner({...selectedOwner, vkn: e.target.value})} />
               </div>
               <div className="col-span-2 space-y-1 text-left">
-                <label className="text-sm font-semibold text-gray-600">Resmi Ünvan (Official Name)</label>
+                <label className="text-sm font-semibold text-gray-600">Yönetici</label>
                 <input disabled={modalMode === 'view'} className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl outline-none" value={selectedOwner.official_name || ''} placeholder="Ticari sicil ünvanı..." onChange={e => setSelectedOwner({...selectedOwner, official_name: e.target.value})} />
               </div>
               <div className="col-span-2 space-y-1 text-left">

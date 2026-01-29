@@ -8,6 +8,7 @@ import CategoryManagement from './pages/CategoryManagement';
 import SubvendorManagement from './pages/SubvendorManagement';
 import BrandManagement from './pages/BrandManagement';
 import OwnerManagement from './pages/OwnerManagement';
+import UserManagement from './pages/UserManagement';
 
 function App() {
   return (
@@ -92,6 +93,17 @@ function App() {
             <ProtectedRoute>
               <Layout>
                 <OwnerManagement />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+         <Route
+          path="/user-management"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <UserManagement />
               </Layout>
             </ProtectedRoute>
           }
